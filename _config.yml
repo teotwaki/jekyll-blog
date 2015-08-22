@@ -3,6 +3,8 @@ gems:
   - jemoji
   - jekyll-paginate
 
+destination: /home/sites/blog.wedrop.it
+
 # Site settings
 title: "Drop a Blog"
 description: > # this means to ignore newlines until "email:"
@@ -22,7 +24,7 @@ author_image: "/assets/images/sl_avatar.jpg"
 
 paginate:	5
 
-url: "http://firestarter.wedrop.it:4000" # the base hostname & protocol for your site
+url: "https://blog.wedrop.it" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
 twitter_handle: '@dirkfabisch'
