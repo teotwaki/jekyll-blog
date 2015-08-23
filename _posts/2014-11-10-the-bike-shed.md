@@ -3,6 +3,7 @@ layout: post
 title:  "The bike shed"
 categories: blog
 tags:
+image: /assets/article_images/2014-11-10-the-bike-shed/bike-shed-small.jpg
 ---
 Please note: This article was initially published on my previous blog, called
 *Arrogant and Condescending*, on 2nd February 2011.
