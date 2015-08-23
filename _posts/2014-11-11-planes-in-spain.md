@@ -4,6 +4,7 @@ title: "The planes in Spain cause passengers a pain"
 date:  2014-11-11 18:00
 categories: rants
 tags:
+image: /assets/article_images/2014-11-11-planes-in-spain/planes-in-spain-small.jpg
 ---
 *Please note: This article was initially published on my previous blog, called
 __Arrogant and Condescending__, on 15th January 2010. I'm not sure I would
