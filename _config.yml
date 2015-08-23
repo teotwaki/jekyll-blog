@@ -16,7 +16,8 @@ logo: "/assets/images/sl_logo.png"
 float_logo: true # true, false (default)
 
 # blog cover
-cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
+#cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
+cover: "/assets/images/4D936417DC.jpg"
 
 name: 'Sebastian Lauwers'
 author: 'Sebastian Lauwers'
