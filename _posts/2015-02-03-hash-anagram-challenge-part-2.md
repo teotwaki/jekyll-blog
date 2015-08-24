@@ -299,10 +299,10 @@ Age][wolfram-copper]). Now obviously, I wouldn't need to test *every single*
 permutation; especially if I check the md5 hash every time I find an anagram.
 
 So how can we split the work across multiple cores? I know just the library for
-the job: [ZeroMQ][zeromq]. ZeroMQ (also written ØMQ) is a great tool to have on
+the job: [ZeroMQ][zeromq]. ZeroMQ (also written &Oslash;MQ) is a great tool to have on
 your belt. It doesn't require much, other than a good ol' paradigm shift (POP!).
 
-![Dilbert: Paradigm](images/dilbert-paradigm.gif)
+![Dilbert: Paradigm](/assets/article_images/2015-02-03-hash-anagram-challenge-part-2/dilbert-paradigm.gif)
 
 ZeroMQ makes multithreading and multiprocessing easy. Well, it doesn't, it just
 makes communicating between multiple threads, processes or servers a piece of
