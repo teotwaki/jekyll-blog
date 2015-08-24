@@ -2,6 +2,7 @@
 gems:
   - jemoji
   - jekyll-paginate
+  - jekyll-sitemap
 
 destination: /home/sites/blog.wedrop.it
 
