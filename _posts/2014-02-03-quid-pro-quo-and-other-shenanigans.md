@@ -4,6 +4,7 @@ title:  "Quid pro quo, and other shenanigans"
 date:   2014-02-04 10:08
 categories: rants
 tags:
+image: /assets/article_images/2014-02-03-quid-pro-quo-and-other-shenanigans/conflict-small.jpg
 ---
 If anyone ever bothered reading the previous blog, this might sound familiar:
 I'm sitting in a train, on my way to Paris.
