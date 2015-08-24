@@ -4,7 +4,7 @@ title: About me
 permalink: /about/
 ---
 
-Hi, I'm Sebastian . I am teotwaki on [GitHub][github-teotwaki] and on
+Hi, I'm Sebastian. I am teotwaki on [GitHub][github-teotwaki] and on
 [Twitter][twitter-teotwaki]. You can also reach me via [email][email].
 
 I'm a software engineer at Realm where I primarily work on the core database
