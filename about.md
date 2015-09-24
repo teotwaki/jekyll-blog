@@ -5,7 +5,10 @@ permalink: /about/
 ---
 
 Hi, I'm Sebastian. I am teotwaki on [GitHub][github-teotwaki] and on
-[Twitter][twitter-teotwaki]. You can also reach me via [email][email].
+[Twitter][twitter-teotwaki]. You can also reach me via [email][email]. If you
+feel the need to encrypt the data you are sending me, you can use my [GPG
+key][slau-gpg]. If you'd rather get it from [pgp.mit.edu][pgp-mit], the key ID
+is `2048R/CC18E354`.
 
 I'm a software engineer at Realm where I primarily work on the core database
 engine. I recently moved to Copenhagen from the south of France. It's a great
@@ -32,3 +35,5 @@ source code for this blog is available on [GitHub][github-jekyll-blog].
 [mediator-theme]: https://github.com/dirkfabisch/mediator
 [dirk-blog]: http://blog.base68.com
 [github-jekyll-blog]: https://github.com/teotwaki/jekyll-blog
+[slau-gpg]: https://blog.wedrop.it/assets/files/sl.gpg
+[pgp-mit]: https://pgp.mit.edu/
