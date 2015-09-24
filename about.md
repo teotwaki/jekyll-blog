@@ -8,8 +8,8 @@ Hi, I'm Sebastian. I am teotwaki on [GitHub][github-teotwaki] and on
 [Twitter][twitter-teotwaki]. You can also reach me via [email][email].
 
 I'm a software engineer at Realm where I primarily work on the core database
-engine. I'm currently in the process of relocating to Denmark, and should be
-there permanently in early September.
+engine. I recently moved to Copenhagen from the south of France. It's a great
+country, and you should definitely check it out if you have the chance.
 
 I am a firm believer in Free Software, and humbly attempt to further that cause
 whenever I can. On that side, I have not been as productive as I would've liked
