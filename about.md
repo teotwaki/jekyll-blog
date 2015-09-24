@@ -27,7 +27,7 @@ source code for this blog is available on [GitHub][github-jekyll-blog].
 
 [github-teotwaki]: https://github.com/teotwaki
 [twitter-teotwaki]: https://twitter.com/teotwaki
-[email]: mailto:sebastian.lauwers+blog@gmail.com
+[email]: mailto:sl@mailicio.us
 [jekyll]: http://jekyllrb.com
 [mediator-theme]: https://github.com/dirkfabisch/mediator
 [dirk-blog]: http://blog.base68.com
