@@ -26,6 +26,12 @@ author_image: "/assets/images/sl_avatar.jpg"
 
 paginate:	5
 
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
 url: "https://blog.wedrop.it" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
