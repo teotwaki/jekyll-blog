@@ -71,63 +71,63 @@ And an equivalent implementation in C:
 ```cpp
 // Return a copy of the letters a string (without spaces)
 char * lttrdup(char const * str) {
-	// Technically, we're wasting a few bytes here, but that's OK.
-	char * copy = malloc(strlen(str) + 1);
-	char * tmp = copy;
+  // Technically, we're wasting a few bytes here, but that's OK.
+  char * copy = malloc(strlen(str) + 1);
+  char * tmp = copy;
 
-	do {
-		if (*str != ' ')
-			*tmp++ = *str;
-	} while (*str++ != '\0');
+  do {
+    if (*str != ' ')
+      *tmp++ = *str;
+  } while (*str++ != '\0');
 
-	return copy;
+  return copy;
 }
 
 bool is_anagram(char const * first, char const * second) {
-	// If the strings are equivalent, they are anagrams
-	if (strcmp(first, second) == 0)
-		return true;
+  // If the strings are equivalent, they are anagrams
+  if (strcmp(first, second) == 0)
+    return true;
 
-	else {
-		// Remove the spaces from our strings
-		char * cpy_first = lttrdup(first);
-		char * cpy_second = lttrdup(second);
+  else {
+    // Remove the spaces from our strings
+    char * cpy_first = lttrdup(first);
+    char * cpy_second = lttrdup(second);
 
-		// tmp_second is an iterator over cpy_second
-		char * tmp_second = cpy_second;
+    // tmp_second is an iterator over cpy_second
+    char * tmp_second = cpy_second;
 
-		// If both strings don't have the same length, they can't be anagrams
-		if (strlen(cpy_first) == strlen(cpy_second)) {
+    // If both strings don't have the same length, they can't be anagrams
+    if (strlen(cpy_first) == strlen(cpy_second)) {
 
-			// Iterate over cpy_second until the end is reached
-			while (*tmp_second != '\0') {
-				// find the character pointed by tmp_second in cpy_first
-				char * match = strchr(cpy_first, *tmp_second);
+      // Iterate over cpy_second until the end is reached
+      while (*tmp_second != '\0') {
+        // find the character pointed by tmp_second in cpy_first
+        char * match = strchr(cpy_first, *tmp_second);
 
-				// if a match is found, overwrite it, and move on the to the
-				// next character
-				if (match != NULL) {
-					*match = '.';
-					tmp_second++;
-				}
+        // if a match is found, overwrite it, and move on the to the
+        // next character
+        if (match != NULL) {
+          *match = '.';
+          tmp_second++;
+        }
 
-				// no match found, skip to cleanup
-				else
-					break;
-			}
+        // no match found, skip to cleanup
+        else
+          break;
+      }
 
-		}
+    }
 
-		// if tmp_second doesn't point to the end of the string, we found a
-		// character that doesn't exist in first, hence, no anagram
-		bool result = *tmp_second == '\0';
+    // if tmp_second doesn't point to the end of the string, we found a
+    // character that doesn't exist in first, hence, no anagram
+    bool result = *tmp_second == '\0';
 
-		// cleanup
-		free(cpy_first);
-		free(cpy_second);
+    // cleanup
+    free(cpy_first);
+    free(cpy_second);
 
-		return result;
-	}
+    return result;
+  }
 }
 ```
 
@@ -159,40 +159,40 @@ string that has an order point sum value of 2036 isn't necessarily an anagram of
 
 ```python
 def letterCount(word):
-	return sum(map(lambda x: 1 if x != ' ' else 0, word))
+    return sum(map(lambda x: 1 if x != ' ' else 0, word))
 
 def sumLetters(word):
-	return sum(map(lambda x: ord(x) if x != ' ' else 0, word))
+    return sum(map(lambda x: ord(x) if x != ' ' else 0, word))
 
 def isPlausibleAnagram(first, second):
-	return letterCount(first) == letterCount(second) and \
-		sumLetters(first) == sumLetters(second)
+    return letterCount(first) == letterCount(second) and \
+        sumLetters(first) == sumLetters(second)
 ```
 
 Excellent. Let's try to do the same in C:
 
 ```cpp
 bool is_plausible_anagram(char const * first, char const * second) {
-	unsigned int first_length = 0;
-	unsigned int second_length = 0;
-	unsigned int first_ord = 0;
-	unsigned int second_ord = 0;
+  unsigned int first_length = 0;
+  unsigned int second_length = 0;
+  unsigned int first_ord = 0;
+  unsigned int second_ord = 0;
 
-	do {
-		if (*first != ' ') {
-			first_ord += *first;
-			first_length++;
-		}
-	} while (*first++ != '\0');
+  do {
+    if (*first != ' ') {
+      first_ord += *first;
+      first_length++;
+    }
+  } while (*first++ != '\0');
 
-	do {
-		if (*second != ' ') {
-			second_ord += *second;
-			second_length++;
-		}
-	} while (*second++ != '\0');
+  do {
+    if (*second != ' ') {
+      second_ord += *second;
+      second_length++;
+    }
+  } while (*second++ != '\0');
 
-	return first_length == second_length && first_ord == second_ord;
+  return first_length == second_length && first_ord == second_ord;
 }
 ```
 
@@ -355,8 +355,8 @@ class WordsList(object):
     def __init__(self, filter, url):
         self._words = getEnglishWords(url)
         self._words = filterWords(self._words, filter)
-		# A copy for future reference
-		self._all_words = list(self._words)
+    # A copy for future reference
+    self._all_words = list(self._words)
 
     def nextWord(self):
         """I give the next word in the words list, or None if the end has been

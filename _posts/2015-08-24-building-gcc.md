@@ -42,9 +42,9 @@ a small symlink that will allow me to call `gcc-4.9.3` from anywhere.
 Be aware that compiled, GCC does take a fair amount of space:
 
     du -sh $HOME/bin/gcc-4.9.3
-    1.1G	/home/slau/bin/gcc-4.9.3
+    1.1G  /home/slau/bin/gcc-4.9.3
     du -sh $HOME/src/foss/gcc-4.9.3
-    5.5G	/home/slau/src/foss/gcc-4.9.3
+    5.5G  /home/slau/src/foss/gcc-4.9.3
 
 So yeah, there's that to keep in mind.
 

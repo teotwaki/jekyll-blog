@@ -4,7 +4,7 @@ gems:
   - jekyll-paginate
   - jekyll-sitemap
 
-destination: /home/sites/blog.wedrop.it
+destination: /tmp/blog.wedrop.it
 
 # Site settings
 title: "Drop a Blog"

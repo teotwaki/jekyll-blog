@@ -39,64 +39,64 @@ Without further ado, here's the class:
 import os, time
 
 class Lock(object):
-	"""
-	Manage a system-wide lock used to inform other processes they should wait.
-	The lockfile argument is the token that should be shared amongst all the
-	processes wanting to acquire exclusive locks to the same resource.
-	"""
+    """
+    Manage a system-wide lock used to inform other processes they should wait.
+    The lockfile argument is the token that should be shared amongst all the
+    processes wanting to acquire exclusive locks to the same resource.
+    """
 
-	polling = 0.1
+    polling = 0.1
 
-	def __init__(self, lockfile):
-		self._lockfile = '%s.lock' % lockfile
-		# I only target linux systems... Sorry.
-		self._path = os.path.join('/tmp', self._lockfile)
-		self.locked = False
+    def __init__(self, lockfile):
+        self._lockfile = '%s.lock' % lockfile
+        # I only target linux systems... Sorry.
+        self._path = os.path.join('/tmp', self._lockfile)
+        self.locked = False
 
-	def __enter__(self):
-		self.acquire()
-		return self
+    def __enter__(self):
+        self.acquire()
+        return self
 
-	def __exit__(self, _, __, ___):
-		self.release()
+    def __exit__(self, _, __, ___):
+        self.release()
 
-	def acquire(self):
-		"""
-		Try to acquire a lock. This is a blocking call, until the lock is
-		acquired. If you want a non-blocking call, try nb_acquire().
-		"""
-		if self.locked:
-			""" TODO: Raise """
-			pass
+    def acquire(self):
+        """
+        Try to acquire a lock. This is a blocking call, until the lock is
+        acquired. If you want a non-blocking call, try nb_acquire().
+        """
+        if self.locked:
+            """ TODO: Raise """
+            pass
 
-		while not self._acquire():
-			time.sleep(self.polling)
+        while not self._acquire():
+            time.sleep(self.polling)
 
-		self.locked = True
+        self.locked = True
 
-	def nb_acquire(self):
-		if self.locked:
-			""" TODO: Raise """
-			pass
+    def nb_acquire(self):
+        if self.locked:
+            """ TODO: Raise """
+            pass
 
-		self.locked = self._acquire()
-		return self.locked
+        self.locked = self._acquire()
+        return self.locked
 
-	def _acquire(self):
-		try:
-			os.mkdir(self._path)
-		except OSError:
-			return False
-		return True
+    def _acquire(self):
+        try:
+            os.mkdir(self._path)
+        except OSError:
+            return False
+        return True
 
-	def release(self):
-		if not self.locked:
-			""" TODO: Raise """
-			pass
+    def release(self):
+        if not self.locked:
+            """ TODO: Raise """
+            pass
 
-		os.rmdir(self._path)
+        os.rmdir(self._path)
 
-		self.locked = False
+        self.locked = False
 ```
 
 There's a couple of TODOs, and I might push this stuff to my github account at
@@ -117,7 +117,7 @@ lock_name = 'my-lock'
 
 # Primary usage
 with Lock(lock_name):
-	print "We should be locked!"
+    print "We should be locked!"
 ```
 
 And that's really just it. The locking magic happens in the `with` statement. As
@@ -139,10 +139,10 @@ lock.release()
 
 # Yet another kind of usage (non-blocking, this time)
 if lock.nb_acquire():
-	print "We should be locked!"
-	lock.release()
+    print "We should be locked!"
+    lock.release()
 else:
-	print "We're most definitely not locked!"
+    print "We're most definitely not locked!"
 ```
 
 So, now we can execute a block of code without having to worry about other
@@ -174,70 +174,70 @@ from os.path import expanduser, join
 
 class RPMReleases(object):
 
-	def __init__(self):
-		self._path = join(expanduser('~'), 'iv-rpm-releases')
-		self._releases = {}
+    def __init__(self):
+        self._path = join(expanduser('~'), 'iv-rpm-releases')
+        self._releases = {}
 
-	def __enter__(self):
-		self.load()
-		return self
+    def __enter__(self):
+        self.load()
+        return self
 
-	def __exit__(self, _, __, ___):
-		self.dump()
+    def __exit__(self, _, __, ___):
+        self.dump()
 
-	def load(self):
-		try:
-			with open(self._path, 'r') as f:
-				self._releases = json.load(f)
-		except IOError:
-			pass
+    def load(self):
+        try:
+            with open(self._path, 'r') as f:
+                self._releases = json.load(f)
+        except IOError:
+            pass
 
-	def dump(self):
-		with open(self._path, 'w+') as f:
-			json.dump(self._releases, f)
+    def dump(self):
+        with open(self._path, 'w+') as f:
+            json.dump(self._releases, f)
 
-	def get_next_release(self, package, version, increment = True):
-		if package not in self._releases:
-			self._releases[package] = {}
+    def get_next_release(self, package, version, increment = True):
+        if package not in self._releases:
+            self._releases[package] = {}
 
-		if version not in self._releases[package]:
-			self._releases[package][version] = 0
+        if version not in self._releases[package]:
+            self._releases[package][version] = 0
 
-		if increment:
-			self._releases[package][version] += 1
+        if increment:
+            self._releases[package][version] += 1
 
-		return self._releases[package][version]
+        return self._releases[package][version]
 
-	def set_release(self, package, version, release):
-		if package not in self._releases:
-			self._releases[package] = {}
+    def set_release(self, package, version, release):
+        if package not in self._releases:
+            self._releases[package] = {}
 
-		self._releases[package][version] = release
+        self._releases[package][version] = release
 
 if __name__ == '__main__':
-	parser = argparse.ArgumentParser()
-	parser.add_argument("package",
-			help = "The software package for which you want a release number")
-	parser.add_argument("version",
-			help = "The version of the package for which you want a release number")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("package",
+        help = "The software package for which you want a release number")
+    parser.add_argument("version",
+        help = "The version of the package for which you want a release number")
 
-	parser.add_argument("--current", action = "store_true",
-			help = "Don't increment any counters, just print the current value")
-	parser.add_argument("--full", action = "store_true",
-			help = "Print the full package name")
+    parser.add_argument("--current", action = "store_true",
+        help = "Don't increment any counters, just print the current value")
+    parser.add_argument("--full", action = "store_true",
+        help = "Print the full package name")
 
-	args = parser.parse_args()
+    args = parser.parse_args()
 
-	with Lock('iv-rpm-releases'):
-		with RPMReleases() as releases:
-			inc = not args.current
-			release = releases.get_next_release(args.package, args.version, increment = inc)
+    with Lock('iv-rpm-releases'):
+        with RPMReleases() as releases:
+            inc = not args.current
+            release = releases.get_next_release(args.package, args.version, increment = inc)
 
-			if not args.full:
-				print release
+            if not args.full:
+                print release
 
-			else:
-				print '%s-%s-%s' % (args.package, args.version, release)
+            else:
+                print '%s-%s-%s' % (args.package, args.version, release)
 ```
 
 ## How to use it ##

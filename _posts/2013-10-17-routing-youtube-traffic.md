@@ -37,7 +37,7 @@ On the raspberrypi, install dnsmasq:
 Next, configure dnsmasq to hijack all YouTube related traffic to your
 server:
 
-	server="123.123.123.123"
+    server="123.123.123.123"
     echo "address=/youtube.com/$server" | sudo tee -a /etc/dnsmasq.conf
 
 On my server, I already host quite a few websites, so port 80 is already
@@ -49,11 +49,11 @@ Instead, I opted to use lighty as a reverse proxy onto squid, and added
 the following rule to `/etc/lighttpd/lighttpd.conf`:
 
     else $HTTP["host"] =~ "youtube.com$" {
-    	$HTTP["remoteip"] == "88.88.88.88" {
-    		proxy.server = ("" =>
-    			(( "host" => "127.0.0.1", "port" => 3128 ))
-    		)
-    	}
+      $HTTP["remoteip"] == "88.88.88.88" {
+        proxy.server = ("" =>
+          (( "host" => "127.0.0.1", "port" => 3128 ))
+        )
+      }
     }
 
 Also, don't forget to add `mod_proxy` to the `server.modules` directive.
