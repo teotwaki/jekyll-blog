@@ -74,6 +74,9 @@ hw.acpi.lid_switch_state=S3
 # Load intel graphics driver
 i915kms_load="YES"
 
+# Reduce GPU power consumption (SandyBridge/IvyVridge)
+drm.i915.enable_rc6=7
+
 # Allow loading of the realtek firmware (wifi dongle)
 legal.realtek.license_ack=1
 
@@ -119,6 +122,58 @@ snd_driver_load="YES"
 
 # Enable better trackpad support
 hw.psm.synaptics_support=1
+```
+
+```conf
+hostname="somemachine.home.wedrop.it"
+
+# Enable DHCP but don't let it block the boot process
+background_dhclient="YES"
+
+# Try to configure re0 (wired) on boot
+ifconfig_re0="DHCP"
+
+# Clone urtwn0 to a device called wlan0
+wlans_urtwn0="wlan0"
+
+# Configure wlan0 to connect through WPA and use DHCP
+ifconfig_wlan0="WPA SYNCDHCP"
+
+keymap="uk.iso.kdb"
+
+# Remote logins
+sshd_enable="YES"
+
+# Set dumpdev to "AUTO" to enable crash dumps, "NO" to disable
+dumpdev="AUTO"
+
+moused_enable="YES"
+
+# powerd: hiadaptive speed while on AC power, adaptive while on battery
+powerd_enable="YES"
+powerd_flags="-a hiadaptive -b adaptive"
+
+# Reduce power consumption by using higher C-states than the default of C1
+performance_cx_lowest="Cmax"
+economy_cx_lowest="Cmax"
+
+# Enable bluetooth
+hcsecd_enable="YES"
+spdp_enable="YES"
+
+# Synchronize system time
+ntpd_enable="YES"
+# Let ntpd make time jumps larger than 1000sec
+ntpd_flags="-g"
+
+# Enable dbus (IPC)
+dbus_enable="YES"
+
+# Enable hald (hardware detection), should not be required.
+# hald_enable="YES"
+
+# Enable graphical login
+slim_enable="YES"
 ```
 
 ## Installed ports
