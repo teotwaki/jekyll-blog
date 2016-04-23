@@ -124,6 +124,8 @@ snd_driver_load="YES"
 hw.psm.synaptics_support=1
 ```
 
+`/etc/rc.conf`:
+
 ```conf
 hostname="somemachine.home.wedrop.it"
 
@@ -176,6 +178,11 @@ dbus_enable="YES"
 slim_enable="YES"
 ```
 
+## User configuration
+
+I haven't documented or stored all of this to my dotfiles repositories yet.
+Come back later? :)
+
 ## Installed ports
 
 Following is a list of packages that I usually install pretty quickly after
@@ -183,32 +190,31 @@ setting up a new system:
 
 ### Terminal and shell stuff
 
-- pv
-- rxvt-unicode
-- scrot
+- pv (pipe viewer)
+- rxvt-unicode (terminal)
+- scrot (screen capture)
 - sudo
-- the_silver_searcher
-- zsh
+- the_silver_searcher (grep replacement for vim)
+- zsh (shell)
 
 ### Development
 
+- neovim (from source)
 - autotools
 - clang38
 - cmake
 - git
-- gmake
+- gmake (BSD-make is sadly not very supported)
 
 ### Desktop environment
 
-- dmenu
-- feh
+- dmenu (app launcher for i3)
+- feh (background manager)
 - firefox
 - git-gui
-- i3
-- i3lock
-- i3status
-- keepass
-- slim
+- i3-gaps (from source)
+- keepass (password manager)
+- slim (graphical login)
 
 I'm an absolute FreeBSD noob, so some of the stuff listed here is probably
 suboptimal. Feel free to tell me on Twitter or drop me an email if there's
