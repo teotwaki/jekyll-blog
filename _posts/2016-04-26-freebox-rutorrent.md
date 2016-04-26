@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Freebox automatic ruTorrent download"
-date:   2016-04-26 21:32:00
+date:   2016-04-26 18:00:00
 categories: freebox
 tags:
 excerpt: >
