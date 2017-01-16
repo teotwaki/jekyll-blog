@@ -3,7 +3,7 @@ layout: post
 title:  "RPM versioning with Jenkins"
 date:   2014-02-01 22:27
 categories: jenkins
-tags: featured
+tags:
 ---
 I'm currently deploying Jenkins at work, in order to simplify the build
 process. At the moment, we have a fairly complicated process that involves a
