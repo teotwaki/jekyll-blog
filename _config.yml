@@ -24,7 +24,7 @@ name: 'Sebastian Lauwers'
 author: 'Sebastian Lauwers'
 author_image: "/assets/images/sl_avatar.jpg"
 
-paginate:	5
+paginate: 10
 
 markdown: kramdown
 kramdown:
