@@ -10,9 +10,9 @@ feel the need to encrypt the data you are sending me, you can use my [GPG
 key][slau-gpg]. If you'd rather get it from [pgp.mit.edu][pgp-mit], the key ID
 is `2048R/CC18E354`.
 
-I'm a software engineer at Realm where I primarily work on the core database
-engine. I recently moved to Copenhagen from the south of France. It's a great
-country, and you should definitely check it out if you have the chance.
+I'm a software engineer at Realm where I primarily work as the lead for the
+sync team. I recently moved to Copenhagen from the south of France. It's a
+great country, and you should definitely check it out if you have the chance.
 
 I am a firm believer in Free Software, and humbly attempt to further that cause
 whenever I can. On that side, I have not been as productive as I would've liked
