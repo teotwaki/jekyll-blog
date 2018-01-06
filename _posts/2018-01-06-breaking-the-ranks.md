@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Breaking the ranks"
-date:   2018-01-06 18:28
+date:   2018-01-06 16:28
 categories: blog personal
 tags:
 excerpt: >
