@@ -6,7 +6,7 @@ categories: blog personal
 tags:
 excerpt: >
   For the fourth time in eighteen months, I am on my way to Belgium. For the
-  fourth time, it is to thank someone for being there, and tell them _goodbye_
+  fourth time, it is to thank someone for being there, and tell them goodbye
   for one last and final time.
 image: /assets/article_images/2018-01-06-breaking-the-ranks/breaking-the-ranks.jpg
 ---
