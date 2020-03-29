@@ -4,8 +4,6 @@ gems:
   - jekyll-paginate
   - jekyll-sitemap
 
-destination: /home/sites/blog.wedrop.it
-
 # Site settings
 title: "Drop a Blog"
 description: > # this means to ignore newlines until "email:"
